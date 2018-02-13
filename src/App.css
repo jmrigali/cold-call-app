@@ -4,6 +4,7 @@
 .navbar {
   height: 10vh;
   font-size: 2em;
+  color: #4CAF50;
 }
 
 .selectedStudent {
@@ -12,7 +13,7 @@
   border: 2px dotted black;
   text-align: center;
   justify-content: center;
-  color: green;
+  color: #4CAF50;
   font-size: 5em;
 }
 
@@ -35,4 +36,8 @@
 
 .studentBox {
   margin-top: 10px;
+}
+
+.indivStudent {
+  color: #4CAF50;
 }
