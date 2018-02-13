@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+.navbar {
+  height: 10vh;
+  font-size: 2em;
+}
+
+.selectedStudent {
+  width: 100vw;
+  height: 20vh;
+  border: 2px dotted black;
+  text-align: center;
+  justify-content: center;
+  color: green;
+  font-size: 5em;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  width: 200px;
+  height:100px;
+  border-radius: 5px;
+  border: 1px solid #4CAF50;
+  font-size: 2em;
+  color:  #4CAF50;
+  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.submitBtn:hover {
+  background-color: #4CAF50; /* Green */
+   color: white;
+}
+
+.studentBox {
+  margin-top: 10px;
+}
