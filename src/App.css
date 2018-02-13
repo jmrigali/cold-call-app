@@ -10,7 +10,7 @@
 .selectedStudent {
   width: 100vw;
   height: 20vh;
-  border: 2px dotted black;
+  border: 2px dotted #4CAF50;
   text-align: center;
   justify-content: center;
   color: #4CAF50;
