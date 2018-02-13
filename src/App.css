@@ -41,3 +41,19 @@
 .indivStudent {
   color: orange;
 }
+
+.remove {
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+}
+
+.remove:hover{
+  background-color: black;
+}
+
+.refresh {
+  background-color: green;
+  color: white;
+  border-radius: 3px;
+}
