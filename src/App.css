@@ -4,16 +4,16 @@
 .navbar {
   height: 10vh;
   font-size: 2em;
-  color: black;
+  color: orange;
 }
 
 .selectedStudent {
   width: 100vw;
   height: 20vh;
-  border: 2px dotted black;
+  border: 2px dotted orange;
   text-align: center;
   justify-content: center;
-  color: black;
+  color: orange;
   font-size: 5em;
 }
 
@@ -22,15 +22,15 @@
   width: 200px;
   height:100px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid orange;
   font-size: 2em;
-  color:  black;
+  color:  orange;
   -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
 .submitBtn:hover {
-  background-color: black; /* Green */
+  background-color: orange; /* Green */
    color: white;
 }
 
@@ -39,5 +39,5 @@
 }
 
 .indivStudent {
-  color: black;
+  color: orange;
 }
