@@ -18,14 +18,24 @@ class App extends Component {
       this.setState({studentSelected:student});
     }
 
+    removeStudent = (name) => {
+      let copy = this.state.classroom.slice(0);
+      let filtered = copy.filter(student => student !== name);
+      this.setState({ classroom: filtered })
+    }
+
+    refresh = () => {
+      this.setState({ classroom: this.props.classroom });
+    }
+
     render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar refresh={this.refresh} />
         <div className = 'container'>
           <div className = "studentList">
             <h3> Classroom List </h3>
-            <Students classroom={this.state.classroom} />
+            <Students classroom={this.state.classroom} removeStudent={this.removeStudent}/>
           </div>
 
           <div className = "selectStudentContainer">
