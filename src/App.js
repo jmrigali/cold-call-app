@@ -22,11 +22,18 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <div className="selectedStudent">{this.state.studentSelected}</div>
-        <button className="submitBtn" onClick={()=>{this.generateStudent()}}>Cold Call</button>
+        <div className = 'container'>
+          <div className = "studentList">
+            <h3> Classroom List </h3>
+            <Students classroom={this.state.classroom} />
+          </div>
 
-        <Students classroom={this.state.classroom} />
+          <div className = "selectStudentContainer">
+            <div className="selectedStudent">{this.state.studentSelected}</div>
+            <button className="submitBtn" onClick={()=>{this.generateStudent()}}>Cold Call</button>
+          </div>
 
+        </div>
       </div>
     );
   }
