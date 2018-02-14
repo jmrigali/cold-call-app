@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Students from './Components/Students';
@@ -9,19 +8,43 @@ class App extends Component {
       super(props)
       this.state = {
         classroom: this.props.classroom,
-        studentSelected: ''
+        studentSelected: '',
+        weightedArray: []
       }
     }
+    componentWillMount(){
+      let array = this.state.classroom;
+      this.weightedArray(array);
+    }
+
 
     generateStudent () {
-      let student = this.state.classroom[Math.floor((Math.random()*this.state.classroom.length)+ 1)]
-      this.setState({studentSelected:student});
+      let array = this.state.weightedArray;
+      if(this.state.weightedArray.length === 0) {
+        return this.weightedArray(this.state.classroom);
+      }
+      let student = array[Math.floor((Math.random()*array.length))];
+      let index = array.findIndex(function (element){
+        return element === student;
+      });
+      this.setState({studentSelected:student, weightedArray:[...array.slice(0,index), ...array.slice(index+1)]});
+    }
+
+    weightedArray (array) {
+      let weightedArray = [];
+      array.forEach(ele=>{
+        for(let i = 0; i <= 3; i++){
+          weightedArray.push(ele)
+        }
+      })
+      this.setState({weightedArray: weightedArray});
     }
 
     removeStudent = (name) => {
       let copy = this.state.classroom.slice(0);
       let filtered = copy.filter(student => student !== name);
       this.setState({ classroom: filtered })
+      this.weightedArray(this.state.classroom)
     }
 
     refresh = () => {
@@ -32,11 +55,19 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar refresh={this.refresh} />
-        <div className="selectedStudent">{this.state.studentSelected}</div>
-        <button className="submitBtn" onClick={()=>{this.generateStudent()}}>Cold Call</button>
+        <div className = 'container'>
+          <div className = "studentList">
+            <h3> Classroom List </h3>
+            <button className="refresh" onClick={() => this.refresh()}>Refresh</button>
+            <Students classroom={this.state.classroom} removeStudent={this.removeStudent}/>
+          </div>
 
-        <Students classroom={this.state.classroom} removeStudent={this.removeStudent}/>
+          <div className = "selectStudentContainer">
+            <div className="selectedStudent">{this.state.studentSelected}</div>
+            <button className="submitBtn" onClick={()=>{this.generateStudent()}}>Cold Call</button>
+          </div>
 
+        </div>
       </div>
     );
   }
