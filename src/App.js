@@ -14,7 +14,8 @@ class App extends Component {
     }
 
     generateStudent () {
-      let student = this.state.classroom[Math.floor((Math.random()*this.state.classroom.length)+ 1)]
+      this.setState({ classroom: this.state.classroom })
+      let student = this.state.classroom[Math.floor((Math.random()*this.state.classroom.length))]
       this.setState({studentSelected:student});
     }
 
