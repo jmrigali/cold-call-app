@@ -2,7 +2,6 @@ import React from 'react';
 import Student from './Student';
 
 const Students = ({ classroom, removeStudent }) => {
-  console.log(Array.isArray(classroom))
     return (
       <div className="studentBox">
         {classroom.map(student=>(<Student key={student.id} student={student} removeStudent={removeStudent} />))}
@@ -11,4 +10,3 @@ const Students = ({ classroom, removeStudent }) => {
 }
 
 export default Students;
-  //     // {classroom.map(student => (<Student key={student.id} student={student} />))}
