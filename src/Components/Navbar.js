@@ -4,7 +4,7 @@ import React from 'react';
 const Navbar = ({ refresh }) => {
   return (
     <div className="navbar">
-      Cold Call App for g68<br />
+      g68 gets Volun-TOLD<br />
     </div>
   )
 }
